@@ -14,11 +14,6 @@ def normalize_kbo(n: str) -> str:
     return digits
 
 def extract_from_detail_page(page) -> dict:
-    """
-    KBO pages are in Dutch/French; labels vary.
-    We’ll parse by looking for common label keywords and reading the value next to them.
-    Works best when the contact info is shown in a key/value table.
-    """
     text = page.inner_text("body")
 
     def find_one(patterns):
